@@ -4,10 +4,6 @@ A governance-adjusted value screener that identifies companies where meaningful 
 
 **Live demo**: [athena-gov.streamlit.app](https://athena-gov.streamlit.app/)
 
-```bash
-pip install -r requirements.txt && streamlit run app.py
-```
-
 ---
 
 ## How I Interpreted the Use Case
