@@ -1,0 +1,503 @@
+{
+  "AAPL": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "High",
+    "so_what_headline": "Apple Inc. shows moderate female governance presence (50% female, composite 58) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "4 of 8 directors are female (50%), with women holding 2 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS CAGR of 6% and 48% total shareholder return over 3 years -- moderate financial performance alongside current governance structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.02 -- fair value. Governance quality and market pricing are roughly aligned. No significant arbitrage opportunity.",
+    "catalyst": null
+  },
+  "MSFT": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "High",
+    "so_what_headline": "Microsoft Corp. shows moderate female governance presence (42% female, composite 73) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "5 of 12 directors are female (42%), with women holding 2 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS has compounded at 13% CAGR over 4 years with revenue growing 61% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.05 -- fair value. Governance quality and market pricing are roughly aligned. No significant arbitrage opportunity.",
+    "catalyst": null
+  },
+  "AMZN": {
+    "classification": "Cosmetic / Token Risk",
+    "confidence": "High",
+    "so_what_headline": "Amazon.com Inc. shows signs of cosmetic diversity -- female representation exists (36%) but without meaningful positional power (score: 15).",
+    "so_what_board": "4 of 11 directors are female (36%), with women holding 1 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS has compounded at 14% CAGR over 4 years with revenue growing 49% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.41 -- governance trap warning. High valuation (85% percentile) with weak governance score (44/100). Risk of multiple compression if governance quality becomes a factor.",
+    "catalyst": null
+  },
+  "GOOGL": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "High",
+    "so_what_headline": "Alphabet Inc. shows moderate female governance presence (20% female, composite 57) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "Women hold 3 key committee roles -- this is positional power, not headcount padding. 2 of 10 directors are female (20%).",
+    "so_what_financial": "EPS CAGR of 10% and 85% total shareholder return over 3 years -- moderate financial performance alongside current governance structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.17 -- governance strength is roughly reflected in valuation. Core hold thesis if governance trajectory continues upward.",
+    "catalyst": null
+  },
+  "META": {
+    "classification": "Cosmetic / Token Risk",
+    "confidence": "High",
+    "so_what_headline": "Meta Platforms Inc. shows signs of cosmetic diversity -- female representation exists (27%) but without meaningful positional power (score: 15).",
+    "so_what_board": "4 of 15 directors are female (27%), with women holding 1 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS has compounded at 16% CAGR over 4 years with revenue growing 59% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.01 -- fair value. Governance quality and market pricing are roughly aligned. No significant arbitrage opportunity.",
+    "catalyst": null
+  },
+  "ACN": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "High",
+    "so_what_headline": "Accenture plc shows moderate female governance presence (46% female, composite 74) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "Female Board Chair is the single most powerful governance signal. With 5 of 11 directors female (46%), Accenture plc combines numeric presence with real decision-making authority.",
+    "so_what_financial": "EPS CAGR of 8% and 29% total shareholder return over 3 years -- moderate financial performance alongside current governance structure.",
+    "so_what_depth": "Strong 80% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.26 -- governance strength is roughly reflected in valuation. Core hold thesis if governance trajectory continues upward.",
+    "catalyst": null
+  },
+  "GM": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "High",
+    "so_what_headline": "General Motors Co. shows moderate female governance presence (54% female, composite 78) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "Female Board Chair is the single most powerful governance signal. With 7 of 13 directors female (54%), General Motors Co. combines numeric presence with real decision-making authority.",
+    "so_what_financial": "EPS CAGR of 10% and 55% total shareholder return over 3 years -- moderate financial performance alongside current governance structure.",
+    "so_what_depth": "Strong 83% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.64 -- governance quality in the 79th percentile at a 15% valuation. Classic governance arbitrage: market has not priced in the board's structural strength.",
+    "catalyst": null
+  },
+  "C": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "High",
+    "so_what_headline": "Citigroup Inc. shows moderate female governance presence (50% female, composite 70) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "Female Board Chair is the single most powerful governance signal. With 6 of 12 directors female (50%), Citigroup Inc. combines numeric presence with real decision-making authority.",
+    "so_what_financial": "EPS has declined at -10% CAGR despite governance composition -- financial underperformance warrants investigation of operational factors beyond board structure.",
+    "so_what_depth": "Strong 80% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.31 -- governance strength is roughly reflected in valuation. Core hold thesis if governance trajectory continues upward.",
+    "catalyst": null
+  },
+  "NFLX": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "High",
+    "so_what_headline": "Netflix Inc. shows moderate female governance presence (36% female, composite 54) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "4 of 11 directors are female (36%), with women holding 2 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS has compounded at 22% CAGR over 4 years with revenue growing 48% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.43 -- governance trap warning. High valuation (92% percentile) with weak governance score (49/100). Risk of multiple compression if governance quality becomes a factor.",
+    "catalyst": null
+  },
+  "ORCL": {
+    "classification": "Cosmetic / Token Risk",
+    "confidence": "High",
+    "so_what_headline": "Oracle Corp. shows signs of cosmetic diversity -- female representation exists (29%) but without meaningful positional power (score: 10).",
+    "so_what_board": "4 of 14 directors are female (29%), with women holding 1 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS has compounded at 17% CAGR over 4 years with revenue growing 41% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.20 -- caution. Trading at a premium (58% valuation percentile) without proportionate governance backing (38/100).",
+    "catalyst": null
+  },
+  "LULU": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "High",
+    "so_what_headline": "Lululemon Athletica shows moderate female governance presence (46% female, composite 64) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "5 of 11 directors are female (46%), with women holding 2 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS CAGR of 21% and 7% total shareholder return over 3 years -- moderate financial performance alongside current governance structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.11 -- governance strength is roughly reflected in valuation. Core hold thesis if governance trajectory continues upward.",
+    "catalyst": null
+  },
+  "PEP": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "High",
+    "so_what_headline": "PepsiCo Inc. shows moderate female governance presence (38% female, composite 58) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "5 of 13 directors are female (38%), with women holding 2 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS CAGR of 7% and -5% total shareholder return over 3 years -- moderate financial performance alongside current governance structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.09 -- fair value. Governance quality and market pricing are roughly aligned. No significant arbitrage opportunity.",
+    "catalyst": null
+  },
+  "JNJ": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "High",
+    "so_what_headline": "Johnson & Johnson shows moderate female governance presence (33% female, composite 56) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "4 of 12 directors are female (33%), with women holding 2 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS has declined at -5% CAGR despite governance composition -- financial underperformance warrants investigation of operational factors beyond board structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.13 -- caution. Trading at a premium (65% valuation percentile) without proportionate governance backing (52/100).",
+    "catalyst": null
+  },
+  "BRK.B": {
+    "classification": "Cosmetic / Token Risk",
+    "confidence": "High",
+    "so_what_headline": "Berkshire Hathaway shows signs of cosmetic diversity -- female representation exists (31%) but without meaningful positional power (score: 0).",
+    "so_what_board": "4 of 13 directors are female (31%), but none hold key committee chair positions -- governance influence is limited to board-level voting.",
+    "so_what_financial": "EPS has compounded at 15% CAGR over 4 years with revenue growing 39% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.31 -- caution. Trading at a premium (72% valuation percentile) without proportionate governance backing (41/100).",
+    "catalyst": null
+  },
+  "TSLA": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "High",
+    "so_what_headline": "Tesla Inc. shows moderate female governance presence (22% female, composite 56) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "Female Board Chair is the single most powerful governance signal. With 2 of 9 directors female (22%), Tesla Inc. combines numeric presence with real decision-making authority.",
+    "so_what_financial": "EPS CAGR of 9% and 88% total shareholder return over 3 years -- moderate financial performance alongside current governance structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.47 -- governance trap warning. High valuation (98% percentile) with weak governance score (51/100). Risk of multiple compression if governance quality becomes a factor.",
+    "catalyst": null
+  },
+  "SYN01": {
+    "classification": "Genuine Structural Depth",
+    "confidence": "Medium",
+    "so_what_headline": "Veridian Health Corp. demonstrates genuine structural depth in female governance, with a composite score of 92 and positional power score of 85 -- this is real influence, not headcount padding.",
+    "so_what_board": "Female Board Chair is the single most powerful governance signal. With 6 of 10 directors female (60%), Veridian Health Corp. combines numeric presence with real decision-making authority.",
+    "so_what_financial": "EPS has compounded at 20% CAGR over 4 years with revenue growing 80% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.62 -- governance quality in the 90th percentile at a 28% valuation. Classic governance arbitrage: market has not priced in the board's structural strength.",
+    "catalyst": null
+  },
+  "SYN02": {
+    "classification": "Genuine Structural Depth",
+    "confidence": "Medium",
+    "so_what_headline": "NovaPeak Financial demonstrates genuine structural depth in female governance, with a composite score of 88 and positional power score of 80 -- this is real influence, not headcount padding.",
+    "so_what_board": "Female Board Chair is the single most powerful governance signal. With 7 of 12 directors female (58%), NovaPeak Financial combines numeric presence with real decision-making authority.",
+    "so_what_financial": "EPS CAGR of 9% and 56% total shareholder return over 3 years -- moderate financial performance alongside current governance structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.04 -- fair value. Governance quality and market pricing are roughly aligned. No significant arbitrage opportunity.",
+    "catalyst": null
+  },
+  "SYN03": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "Medium",
+    "so_what_headline": "Luminos Energy Inc. shows moderate female governance presence (56% female, composite 78) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "Female Board Chair is the single most powerful governance signal. With 5 of 9 directors female (56%), Luminos Energy Inc. combines numeric presence with real decision-making authority.",
+    "so_what_financial": "EPS has compounded at 19% CAGR over 4 years with revenue growing 47% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.14 -- governance strength is roughly reflected in valuation. Core hold thesis if governance trajectory continues upward.",
+    "catalyst": null
+  },
+  "SYN04": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "Medium",
+    "so_what_headline": "Prism Biotech Ltd. shows moderate female governance presence (54% female, composite 80) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "Female Board Chair is the single most powerful governance signal. With 6 of 11 directors female (54%), Prism Biotech Ltd. combines numeric presence with real decision-making authority.",
+    "so_what_financial": "EPS has compounded at 33% CAGR over 4 years with revenue growing 144% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.33 -- governance strength is roughly reflected in valuation. Core hold thesis if governance trajectory continues upward.",
+    "catalyst": null
+  },
+  "SYN05": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "Medium",
+    "so_what_headline": "Catalyst Retail Group shows moderate female governance presence (60% female, composite 79) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "Female Board Chair is the single most powerful governance signal. With 6 of 10 directors female (60%), Catalyst Retail Group combines numeric presence with real decision-making authority.",
+    "so_what_financial": "EPS has compounded at 15% CAGR over 4 years with revenue growing 49% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.11 -- governance strength is roughly reflected in valuation. Core hold thesis if governance trajectory continues upward.",
+    "catalyst": null
+  },
+  "SYN06": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "Medium",
+    "so_what_headline": "Meridian Software shows moderate female governance presence (46% female, composite 68) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "5 of 11 directors are female (46%), with women holding 2 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS has compounded at 12% CAGR over 4 years with revenue growing 67% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.08 -- fair value. Governance quality and market pricing are roughly aligned. No significant arbitrage opportunity.",
+    "catalyst": null
+  },
+  "SYN07": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "Medium",
+    "so_what_headline": "Arcadia Industrials shows moderate female governance presence (42% female, composite 63) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "5 of 12 directors are female (42%), with women holding 2 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS CAGR of 6% and 38% total shareholder return over 3 years -- moderate financial performance alongside current governance structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.35 -- governance strength is roughly reflected in valuation. Core hold thesis if governance trajectory continues upward.",
+    "catalyst": null
+  },
+  "SYN08": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "Medium",
+    "so_what_headline": "Zenith Consumer Co. shows moderate female governance presence (40% female, composite 58) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "4 of 10 directors are female (40%), with women holding 2 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS CAGR of 7% and 52% total shareholder return over 3 years -- moderate financial performance alongside current governance structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.36 -- governance strength is roughly reflected in valuation. Core hold thesis if governance trajectory continues upward.",
+    "catalyst": null
+  },
+  "SYN09": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "Medium",
+    "so_what_headline": "Harbourview REIT shows moderate female governance presence (44% female, composite 60) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "4 of 9 directors are female (44%), with women holding 1 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS has compounded at 10% CAGR over 4 years with revenue growing 40% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.40 -- governance strength is roughly reflected in valuation. Core hold thesis if governance trajectory continues upward.",
+    "catalyst": null
+  },
+  "SYN10": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "Medium",
+    "so_what_headline": "Apex Cloud Systems shows moderate female governance presence (36% female, composite 53) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "4 of 11 directors are female (36%), with women holding 2 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS has compounded at 18% CAGR over 4 years with revenue growing 116% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.04 -- fair value. Governance quality and market pricing are roughly aligned. No significant arbitrage opportunity.",
+    "catalyst": null
+  },
+  "SYN11": {
+    "classification": "Cosmetic / Token Risk",
+    "confidence": "Medium",
+    "so_what_headline": "TerraFlow Logistics shows signs of cosmetic diversity -- female representation exists (30%) but without meaningful positional power (score: 10).",
+    "so_what_board": "3 of 10 directors are female (30%), with women holding 1 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS CAGR of 5% and 35% total shareholder return over 3 years -- moderate financial performance alongside current governance structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.23 -- governance strength is roughly reflected in valuation. Core hold thesis if governance trajectory continues upward.",
+    "catalyst": null
+  },
+  "SYN12": {
+    "classification": "Cosmetic / Token Risk",
+    "confidence": "Medium",
+    "so_what_headline": "BluePeak Pharma shows signs of cosmetic diversity -- female representation exists (33%) but without meaningful positional power (score: 15).",
+    "so_what_board": "4 of 12 directors are female (33%), with women holding 1 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS CAGR of 5% and 56% total shareholder return over 3 years -- moderate financial performance alongside current governance structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.09 -- fair value. Governance quality and market pricing are roughly aligned. No significant arbitrage opportunity.",
+    "catalyst": null
+  },
+  "SYN13": {
+    "classification": "Cosmetic / Token Risk",
+    "confidence": "Medium",
+    "so_what_headline": "Quantum Materials Inc. shows signs of cosmetic diversity -- female representation exists (33%) but without meaningful positional power (score: 15).",
+    "so_what_board": "3 of 9 directors are female (33%), with women holding 1 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS has compounded at 13% CAGR over 4 years with revenue growing 35% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.03 -- fair value. Governance quality and market pricing are roughly aligned. No significant arbitrage opportunity.",
+    "catalyst": null
+  },
+  "SYN14": {
+    "classification": "Cosmetic / Token Risk",
+    "confidence": "Medium",
+    "so_what_headline": "Sterling Insurance shows signs of cosmetic diversity -- female representation exists (27%) but without meaningful positional power (score: 10).",
+    "so_what_board": "3 of 11 directors are female (27%), with women holding 1 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS CAGR of 4% and 39% total shareholder return over 3 years -- moderate financial performance alongside current governance structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.23 -- caution. Trading at a premium (65% valuation percentile) without proportionate governance backing (42/100).",
+    "catalyst": null
+  },
+  "SYN15": {
+    "classification": "Cosmetic / Token Risk",
+    "confidence": "Medium",
+    "so_what_headline": "Crestline Media Group shows signs of cosmetic diversity -- female representation exists (30%) but without meaningful positional power (score: 15).",
+    "so_what_board": "3 of 10 directors are female (30%), with women holding 1 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS has compounded at 20% CAGR over 4 years with revenue growing 67% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.26 -- caution. Trading at a premium (68% valuation percentile) without proportionate governance backing (42/100).",
+    "catalyst": null
+  },
+  "SYN16": {
+    "classification": "Cosmetic / Token Risk",
+    "confidence": "Medium",
+    "so_what_headline": "Atlas Semiconductor shows signs of cosmetic diversity -- female representation exists (25%) but without meaningful positional power (score: 0).",
+    "so_what_board": "2 of 8 directors are female (25%), but none hold key committee chair positions -- governance influence is limited to board-level voting.",
+    "so_what_financial": "EPS CAGR of 7% and 89% total shareholder return over 3 years -- moderate financial performance alongside current governance structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.33 -- caution. Trading at a premium (68% valuation percentile) without proportionate governance backing (35/100).",
+    "catalyst": null
+  },
+  "SYN17": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "Medium",
+    "so_what_headline": "Ironclad Defense Corp. shows moderate female governance presence (22% female, composite 43) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "2 of 9 directors are female (22%), but none hold key committee chair positions -- governance influence is limited to board-level voting.",
+    "so_what_financial": "EPS CAGR of 6% and 51% total shareholder return over 3 years -- moderate financial performance alongside current governance structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.17 -- governance strength is roughly reflected in valuation. Core hold thesis if governance trajectory continues upward.",
+    "catalyst": null
+  },
+  "SYN18": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "Medium",
+    "so_what_headline": "Redwood Mining Co. shows moderate female governance presence (20% female, composite 38) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "2 of 10 directors are female (20%), but none hold key committee chair positions -- governance influence is limited to board-level voting.",
+    "so_what_financial": "EPS has declined at -3% CAGR despite governance composition -- financial underperformance warrants investigation of operational factors beyond board structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.27 -- governance strength is roughly reflected in valuation. Core hold thesis if governance trajectory continues upward.",
+    "catalyst": null
+  },
+  "SYN19": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "Medium",
+    "so_what_headline": "Pinnacle Oil & Gas shows moderate female governance presence (18% female, composite 31) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "2 of 11 directors are female (18%), but none hold key committee chair positions -- governance influence is limited to board-level voting.",
+    "so_what_financial": "EPS has declined at -1% CAGR despite governance composition -- financial underperformance warrants investigation of operational factors beyond board structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.21 -- governance strength is roughly reflected in valuation. Core hold thesis if governance trajectory continues upward.",
+    "catalyst": null
+  },
+  "SYN20": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "Medium",
+    "so_what_headline": "OakBridge Capital shows moderate female governance presence (15% female, composite 34) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "2 of 13 directors are female (15%), but none hold key committee chair positions -- governance influence is limited to board-level voting.",
+    "so_what_financial": "EPS CAGR of 1% and 28% total shareholder return over 3 years -- moderate financial performance alongside current governance structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.65 -- governance trap warning. High valuation (95% percentile) with weak governance score (30/100). Risk of multiple compression if governance quality becomes a factor.",
+    "catalyst": null
+  },
+  "SYN21": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "Medium",
+    "so_what_headline": "Granite Construction shows moderate female governance presence (12% female, composite 31) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "1 of 8 directors are female (12%), but none hold key committee chair positions -- governance influence is limited to board-level voting.",
+    "so_what_financial": "EPS has declined at -2% CAGR despite governance composition -- financial underperformance warrants investigation of operational factors beyond board structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.24 -- governance strength is roughly reflected in valuation. Core hold thesis if governance trajectory continues upward.",
+    "catalyst": null
+  },
+  "SYN22": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "Medium",
+    "so_what_headline": "Titan Heavy Industries shows moderate female governance presence (10% female, composite 20) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "1 of 10 directors are female (10%), but none hold key committee chair positions -- governance influence is limited to board-level voting.",
+    "so_what_financial": "EPS CAGR of 6% and 65% total shareholder return over 3 years -- moderate financial performance alongside current governance structure.",
+    "so_what_depth": "No female baseline 3 years ago -- current representation is entirely new, making long-term commitment impossible to assess.",
+    "so_what_trading": "FGAG of -0.56 -- governance trap warning. High valuation (62% percentile) with weak governance score (6/100). Risk of multiple compression if governance quality becomes a factor.",
+    "catalyst": null
+  },
+  "SYN23": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "Medium",
+    "so_what_headline": "Frontier Telecom shows moderate female governance presence (11% female, composite 29) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "1 of 9 directors are female (11%), but none hold key committee chair positions -- governance influence is limited to board-level voting.",
+    "so_what_financial": "EPS has declined at -5% CAGR despite governance composition -- financial underperformance warrants investigation of operational factors beyond board structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.24 -- governance strength is roughly reflected in valuation. Core hold thesis if governance trajectory continues upward.",
+    "catalyst": null
+  },
+  "SYN24": {
+    "classification": "No Female Representation",
+    "confidence": "Medium",
+    "so_what_headline": "Vulcan Steelworks has zero female board representation -- a significant governance gap in an era where board diversity correlates with operational discipline.",
+    "so_what_board": "All 8 board directors are male. Zero female representation in governance roles.",
+    "so_what_financial": "EPS CAGR of 0% and -5% total shareholder return over 3 years -- moderate financial performance alongside current governance structure.",
+    "so_what_depth": "No female baseline 3 years ago -- current representation is entirely new, making long-term commitment impossible to assess.",
+    "so_what_trading": "FGAG of -0.18 -- caution. Trading at a premium (18% valuation percentile) without proportionate governance backing (0/100).",
+    "catalyst": null
+  },
+  "SYN25": {
+    "classification": "No Female Representation",
+    "confidence": "Medium",
+    "so_what_headline": "Patriot Drilling Inc. has zero female board representation -- a significant governance gap in an era where board diversity correlates with operational discipline.",
+    "so_what_board": "All 7 board directors are male. Zero female representation in governance roles.",
+    "so_what_financial": "EPS has declined at -2% CAGR despite governance composition -- financial underperformance warrants investigation of operational factors beyond board structure.",
+    "so_what_depth": "No female baseline 3 years ago -- current representation is entirely new, making long-term commitment impossible to assess.",
+    "so_what_trading": "FGAG of -0.02 -- fair value. Governance quality and market pricing are roughly aligned. No significant arbitrage opportunity.",
+    "catalyst": null
+  },
+  "SYN26": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "Medium",
+    "so_what_headline": "Nextera Digital shows moderate female governance presence (50% female, composite 82) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "Female Board Chair is the single most powerful governance signal. With 5 of 10 directors female (50%), Nextera Digital combines numeric presence with real decision-making authority.",
+    "so_what_financial": "EPS has compounded at 21% CAGR over 4 years with revenue growing 150% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.62 -- governance quality in the 77th percentile at a 15% valuation. Classic governance arbitrage: market has not priced in the board's structural strength.",
+    "catalyst": null
+  },
+  "SYN27": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "Medium",
+    "so_what_headline": "Solaris Clean Energy shows moderate female governance presence (56% female, composite 79) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "Female Board Chair is the single most powerful governance signal. With 5 of 9 directors female (56%), Solaris Clean Energy combines numeric presence with real decision-making authority.",
+    "so_what_financial": "EPS has compounded at 31% CAGR over 4 years with revenue growing 150% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.14 -- caution. Trading at a premium (88% valuation percentile) without proportionate governance backing (74/100).",
+    "catalyst": null
+  },
+  "SYN28": {
+    "classification": "Genuine Structural Depth",
+    "confidence": "Medium",
+    "so_what_headline": "Everly Cosmetics demonstrates genuine structural depth in female governance, with a composite score of 92 and positional power score of 85 -- this is real influence, not headcount padding.",
+    "so_what_board": "Female Board Chair is the single most powerful governance signal. With 5 of 8 directors female (62%), Everly Cosmetics combines numeric presence with real decision-making authority.",
+    "so_what_financial": "EPS has compounded at 16% CAGR over 4 years with revenue growing 82% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.32 -- governance strength is roughly reflected in valuation. Core hold thesis if governance trajectory continues upward.",
+    "catalyst": null
+  },
+  "SYN29": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "Medium",
+    "so_what_headline": "Pacific Health Network shows moderate female governance presence (36% female, composite 55) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "4 of 11 directors are female (36%), with women holding 1 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS CAGR of 6% and 59% total shareholder return over 3 years -- moderate financial performance alongside current governance structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of +0.24 -- governance strength is roughly reflected in valuation. Core hold thesis if governance trajectory continues upward.",
+    "catalyst": null
+  },
+  "SYN30": {
+    "classification": "Cosmetic / Token Risk",
+    "confidence": "Medium",
+    "so_what_headline": "Vanguard Aerospace shows signs of cosmetic diversity -- female representation exists (33%) but without meaningful positional power (score: 15).",
+    "so_what_board": "3 of 9 directors are female (33%), with women holding 1 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS CAGR of 3% and 52% total shareholder return over 3 years -- moderate financial performance alongside current governance structure.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.08 -- fair value. Governance quality and market pricing are roughly aligned. No significant arbitrage opportunity.",
+    "catalyst": null
+  },
+  "SYN31": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "Medium",
+    "so_what_headline": "Summit Hospitality shows moderate female governance presence (40% female, composite 58) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "4 of 10 directors are female (40%), with women holding 2 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS has compounded at 30% CAGR over 4 years with revenue growing 90% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.18 -- caution. Trading at a premium (72% valuation percentile) without proportionate governance backing (54/100).",
+    "catalyst": null
+  },
+  "SYN32": {
+    "classification": "Cosmetic / Token Risk",
+    "confidence": "Medium",
+    "so_what_headline": "Clearwater Analytics shows signs of cosmetic diversity -- female representation exists (38%) but without meaningful positional power (score: 15).",
+    "so_what_board": "3 of 8 directors are female (38%), with women holding 1 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS has compounded at 15% CAGR over 4 years with revenue growing 87% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.00 -- fair value. Governance quality and market pricing are roughly aligned. No significant arbitrage opportunity.",
+    "catalyst": null
+  },
+  "SYN33": {
+    "classification": "Genuine Structural Depth",
+    "confidence": "Medium",
+    "so_what_headline": "Nova Payments Inc. demonstrates genuine structural depth in female governance, with a composite score of 88 and positional power score of 80 -- this is real influence, not headcount padding.",
+    "so_what_board": "Female Board Chair is the single most powerful governance signal. With 5 of 9 directors female (56%), Nova Payments Inc. combines numeric presence with real decision-making authority.",
+    "so_what_financial": "EPS has compounded at 12% CAGR over 4 years with revenue growing 67% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.03 -- fair value. Governance quality and market pricing are roughly aligned. No significant arbitrage opportunity.",
+    "catalyst": null
+  },
+  "SYN34": {
+    "classification": "Insufficient Data / Neutral",
+    "confidence": "Medium",
+    "so_what_headline": "Brighthouse Education shows moderate female governance presence (40% female, composite 60) -- further positional power development could unlock governance quality premium.",
+    "so_what_board": "4 of 10 directors are female (40%), with women holding 2 committee chair role(s). Scope to deepen positional influence remains.",
+    "so_what_financial": "EPS has compounded at 13% CAGR over 4 years with revenue growing 75% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.22 -- caution. Trading at a premium (85% valuation percentile) without proportionate governance backing (63/100).",
+    "catalyst": null
+  },
+  "SYN35": {
+    "classification": "Genuine Structural Depth",
+    "confidence": "Medium",
+    "so_what_headline": "Aether Biomedical demonstrates genuine structural depth in female governance, with a composite score of 86 and positional power score of 80 -- this is real influence, not headcount padding.",
+    "so_what_board": "Female Board Chair is the single most powerful governance signal. With 6 of 11 directors female (54%), Aether Biomedical combines numeric presence with real decision-making authority.",
+    "so_what_financial": "EPS has compounded at 50% CAGR over 4 years with revenue growing 260% -- strong financial trajectory that coincides with the board's governance profile.",
+    "so_what_depth": "Strong 100% retention rate, though the company operates in a mandate jurisdiction -- distinguish organic commitment from regulatory compliance.",
+    "so_what_trading": "FGAG of -0.09 -- fair value. Governance quality and market pricing are roughly aligned. No significant arbitrage opportunity.",
+    "catalyst": null
+  },
+  "_dataset_summary": "5 of 50 companies achieve 'Genuine Structural Depth' classification -- strong female governance with real positional power. Screen by FGAG to find where this governance quality coincides with market mispricing."
+}

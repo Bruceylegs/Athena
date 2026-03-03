@@ -1,0 +1,51 @@
+ticker,sector,forward_pe,sector_median_pe,valuation_percentile,data_source
+AAPL,Technology,31.2,28.5,0.62,real
+MSFT,Technology,33.5,28.5,0.72,real
+AMZN,Technology,38.2,28.5,0.85,real
+GOOGL,Technology,22.8,28.5,0.35,real
+META,Technology,24.5,28.5,0.42,real
+ACN,Technology,27.2,28.5,0.48,real
+GM,Automotive,5.8,12.5,0.15,real
+C,Financials,12.5,14.2,0.38,real
+NFLX,Technology,42.5,28.5,0.92,real
+ORCL,Technology,30.8,28.5,0.58,real
+LULU,Consumer Discretionary,24.8,22.5,0.55,real
+PEP,Consumer Staples,23.4,24.8,0.45,real
+JNJ,Healthcare,25.5,22.8,0.65,real
+BRK.B,Financials,17.2,14.2,0.72,real
+TSLA,Technology,135.0,28.5,0.98,real
+SYN01,Healthcare,18.5,22.8,0.28,synthetic
+SYN02,Financials,22.0,14.2,0.82,synthetic
+SYN03,Energy,19.2,16.5,0.65,synthetic
+SYN04,Healthcare,22.4,22.8,0.48,synthetic
+SYN05,Consumer Discretionary,28.0,22.5,0.75,synthetic
+SYN06,Technology,33.8,28.5,0.75,synthetic
+SYN07,Industrials,14.9,18.2,0.25,synthetic
+SYN08,Consumer Staples,16.0,24.8,0.18,synthetic
+SYN09,Real Estate,15.0,18.5,0.22,synthetic
+SYN10,Technology,29.0,28.5,0.52,synthetic
+SYN11,Industrials,14.4,18.2,0.22,synthetic
+SYN12,Healthcare,20.7,22.8,0.38,synthetic
+SYN13,Materials,16.9,17.5,0.45,synthetic
+SYN14,Financials,16.6,14.2,0.65,synthetic
+SYN15,Communication Services,23.4,20.5,0.68,synthetic
+SYN16,Technology,32.4,28.5,0.68,synthetic
+SYN17,Industrials,12.3,18.2,0.12,synthetic
+SYN18,Materials,10.7,17.5,0.08,synthetic
+SYN19,Energy,8.6,16.5,0.05,synthetic
+SYN20,Financials,31.3,14.2,0.95,synthetic
+SYN21,Industrials,7.1,18.2,0.02,synthetic
+SYN22,Industrials,20.3,18.2,0.62,synthetic
+SYN23,Communication Services,8.6,20.5,0.05,synthetic
+SYN24,Materials,12.4,17.5,0.18,synthetic
+SYN25,Energy,8.0,16.5,0.02,synthetic
+SYN26,Technology,18.0,28.5,0.15,synthetic
+SYN27,Energy,25.6,16.5,0.88,synthetic
+SYN28,Consumer Discretionary,23.8,22.5,0.58,synthetic
+SYN29,Healthcare,18.9,22.8,0.32,synthetic
+SYN30,Industrials,19.6,18.2,0.55,synthetic
+SYN31,Consumer Discretionary,26.6,22.5,0.72,synthetic
+SYN32,Technology,27.8,28.5,0.45,synthetic
+SYN33,Financials,25.0,14.2,0.88,synthetic
+SYN34,Consumer Discretionary,33.4,22.5,0.85,synthetic
+SYN35,Healthcare,35.2,22.8,0.92,synthetic

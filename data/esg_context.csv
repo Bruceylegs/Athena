@@ -1,0 +1,51 @@
+ticker,esg_governance_score,workforce_diversity_disclosure,diversity_mandate_jurisdiction,mandate_name,cdp_score,data_source
+AAPL,72,Yes,Yes,California SB 826,A-,real
+MSFT,78,Yes,No,,A,real
+AMZN,58,Yes,No,,B,real
+GOOGL,68,Yes,Yes,California SB 826,A-,real
+META,62,Yes,Yes,California SB 826,B+,real
+ACN,85,Yes,No,,A,real
+GM,74,Yes,No,,A-,real
+C,70,Yes,No,,A-,real
+NFLX,55,No,Yes,California SB 826,B,real
+ORCL,48,No,No,,C,real
+LULU,65,Yes,No,,B+,real
+PEP,76,Yes,No,,A,real
+JNJ,72,Yes,No,,A-,real
+BRK.B,35,No,No,,D,real
+TSLA,28,No,No,,C-,real
+SYN01,80,Yes,Yes,California SB 826,A-,synthetic
+SYN02,75,Yes,No,,B+,synthetic
+SYN03,65,Yes,No,,B,synthetic
+SYN04,78,Yes,No,,A-,synthetic
+SYN05,72,Yes,Yes,California SB 826,B+,synthetic
+SYN06,70,Yes,No,,A-,synthetic
+SYN07,68,Yes,No,,B,synthetic
+SYN08,62,Yes,No,,B+,synthetic
+SYN09,58,No,No,,B,synthetic
+SYN10,55,Yes,Yes,California SB 826,B,synthetic
+SYN11,52,No,No,,C+,synthetic
+SYN12,65,Yes,No,,B+,synthetic
+SYN13,48,No,No,,C,synthetic
+SYN14,55,Yes,No,,B,synthetic
+SYN15,50,No,Yes,California SB 826,C+,synthetic
+SYN16,45,No,No,,C+,synthetic
+SYN17,42,No,No,,C,synthetic
+SYN18,38,No,No,,D+,synthetic
+SYN19,35,No,No,,D,synthetic
+SYN20,52,Yes,No,,B-,synthetic
+SYN21,30,No,No,,D,synthetic
+SYN22,40,No,No,,C-,synthetic
+SYN23,32,No,No,,D+,synthetic
+SYN24,28,No,No,,D,synthetic
+SYN25,25,No,No,,D-,synthetic
+SYN26,68,Yes,Yes,California SB 826,A-,synthetic
+SYN27,72,Yes,Yes,California SB 826,A,synthetic
+SYN28,75,Yes,No,,B+,synthetic
+SYN29,62,Yes,No,,B,synthetic
+SYN30,55,Yes,No,,B-,synthetic
+SYN31,48,No,No,,C+,synthetic
+SYN32,52,Yes,No,,B-,synthetic
+SYN33,70,Yes,No,,B+,synthetic
+SYN34,58,Yes,No,,B,synthetic
+SYN35,78,Yes,No,,A-,synthetic
