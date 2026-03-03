@@ -2,6 +2,8 @@
 
 A governance-adjusted value screener that identifies companies where meaningful female board representation coincides with financial outperformance or market mispricing.
 
+**Live demo**: [athena-gov.streamlit.app](https://athena-gov.streamlit.app/)
+
 ```bash
 pip install -r requirements.txt && streamlit run app.py
 ```
