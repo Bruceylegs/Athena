@@ -424,3 +424,112 @@ def build_fgag_gauge(fgag_score: float, label: str) -> go.Figure:
     )
 
     return fig
+
+
+# ---------------------------------------------------------------------------
+# EPS / Revenue Bar Chart (Company Deep Dive — Financial Performance)
+# ---------------------------------------------------------------------------
+
+def build_eps_revenue_bars(fin_table: pd.DataFrame, ticker: str) -> go.Figure:
+    """Grouped bar chart showing EPS and Revenue side-by-side over 5 years."""
+    assert not fin_table.empty, "Cannot build chart from empty financial data"
+
+    years = fin_table["Year"].tolist()
+    eps_vals = fin_table["EPS ($)"].tolist() if "EPS ($)" in fin_table.columns else []
+    rev_vals = fin_table["Revenue ($B)"].tolist() if "Revenue ($B)" in fin_table.columns else []
+
+    fig = go.Figure()
+
+    if eps_vals:
+        fig.add_trace(go.Bar(
+            x=years,
+            y=eps_vals,
+            name="EPS ($)",
+            marker_color=MARINE_BLUE,
+            yaxis="y",
+            hovertemplate="<b>%{x}</b><br>EPS: $%{y:.2f}<extra></extra>",
+        ))
+
+    if rev_vals:
+        fig.add_trace(go.Bar(
+            x=years,
+            y=rev_vals,
+            name="Revenue ($B)",
+            marker_color=INDIGO,
+            yaxis="y2",
+            hovertemplate="<b>%{x}</b><br>Revenue: $%{y:.1f}B<extra></extra>",
+            opacity=0.7,
+        ))
+
+    fig.update_layout(
+        **CHART_LAYOUT_DEFAULTS,
+        title=dict(text=f"{ticker} — EPS & Revenue (5-Year)", font=dict(size=14)),
+        barmode="group",
+        xaxis=dict(title="Year", gridcolor=LIGHT_GREY),
+        yaxis=dict(
+            title="EPS ($)",
+            title_font=dict(color=MARINE_BLUE),
+            tickfont=dict(color=MARINE_BLUE),
+            tickprefix="$",
+            gridcolor=LIGHT_GREY,
+        ),
+        yaxis2=dict(
+            title="Revenue ($B)",
+            title_font=dict(color=INDIGO),
+            tickfont=dict(color=INDIGO),
+            tickprefix="$",
+            ticksuffix="B",
+            anchor="x",
+            overlaying="y",
+            side="right",
+        ),
+        legend=dict(orientation="h", yanchor="bottom", y=-0.25, xanchor="center", x=0.5),
+        height=350,
+    )
+
+    return fig
+
+
+# ---------------------------------------------------------------------------
+# Sector Peer Governance Comparison (Company Deep Dive)
+# ---------------------------------------------------------------------------
+
+def build_sector_peer_governance(
+    scored_df: pd.DataFrame,
+    ticker: str,
+    sector: str,
+) -> go.Figure:
+    """Horizontal bar chart comparing governance scores within the same sector."""
+    peers = scored_df[scored_df["sector"] == sector].copy()
+    if peers.empty:
+        peers = scored_df.head(5).copy()
+
+    peers = peers.sort_values("governance_score", ascending=True)
+
+    colours = [
+        MARINE_BLUE if t == ticker else LIGHT_GREY
+        for t in peers["ticker"]
+    ]
+    border_colours = [
+        OXFORD_BLUE if t == ticker else "#CCC"
+        for t in peers["ticker"]
+    ]
+
+    fig = go.Figure(go.Bar(
+        y=peers["ticker"],
+        x=peers["governance_score"],
+        orientation="h",
+        marker=dict(color=colours, line=dict(color=border_colours, width=1.5)),
+        hovertemplate="<b>%{y}</b><br>Governance Score: %{x:.1f}<extra></extra>",
+    ))
+
+    fig.update_layout(
+        **CHART_LAYOUT_DEFAULTS,
+        title=dict(text=f"Sector Peer Comparison — {sector}", font=dict(size=14)),
+        xaxis=dict(title="Female Governance Composite Score", gridcolor=LIGHT_GREY, range=[0, 100]),
+        yaxis=dict(title=""),
+        showlegend=False,
+        height=max(250, len(peers) * 35 + 80),
+    )
+
+    return fig

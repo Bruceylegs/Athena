@@ -269,7 +269,7 @@ def render_screener(weights: dict[str, float] | None = None) -> None:
     # Build table columns
     table_cols = [
         "ticker", "company", "sector", "rag_label",
-        "governance_score", "tsr_3yr", "fgag", "fgag_label",
+        "governance_score", "classification", "tsr_3yr", "fgag", "fgag_label",
     ]
     available = [c for c in table_cols if c in display_df.columns]
     table_df = display_df[available].copy()
@@ -285,6 +285,7 @@ def render_screener(weights: dict[str, float] | None = None) -> None:
         "sector": "Sector",
         "rag_label": "Female Board Representation",
         "governance_score": "Female Governance Composite Score",
+        "classification": "AI Classification",
         "tsr_3yr": "3yr TSR (%)",
         "fgag": "Female Governance Alpha Gap",
         "fgag_label": "Signal",
@@ -341,6 +342,12 @@ def render_screener(weights: dict[str, float] | None = None) -> None:
                 format="%.1f",
                 help="Female Governance Composite Score (0-100): Weighted combination of Numeric Dominance (25%), "
                      "Positional Power (43.75%), and Structural Depth (31.25%). Excludes financial pillar.",
+            ),
+            "AI Classification": st.column_config.TextColumn(
+                width="medium",
+                help="AI-generated governance classification: 'Genuine Structural Depth' (real power + retention), "
+                     "'Cosmetic / Token Risk' (surface-level representation), or "
+                     "'Insufficient Data / Neutral' (not enough signal to classify).",
             ),
             "3yr TSR (%)": st.column_config.NumberColumn(
                 format="%.1f%%",

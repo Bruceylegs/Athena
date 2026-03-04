@@ -24,6 +24,7 @@ from charts import (
     build_share_price_chart,
     build_female_pct_sparkline,
     build_fgag_gauge,
+    build_sector_peer_governance,
     PLOTLY_CONFIG,
     OXFORD_BLUE,
     RAG_COLOURS,
@@ -529,23 +530,20 @@ def render_company_page() -> None:
                 unique_female_power_names.add(name)
     unique_female_in_power = len(unique_female_power_names)
 
-    board_summary = (
-        f"{female_c} of {board_size} directors are female ({female_pct:.0f}%), "
-        f"{pct_comparison}. "
-        f"Women hold {female_power_count} of 5 key governance roles "
-        f"(vs. a universe average of {avg_power:.1f}). "
-    )
-    if female_power_count > unique_female_in_power and unique_female_in_power > 0:
-        board_summary += (
-            f"Note: {unique_female_in_power} female director{'s' if unique_female_in_power > 1 else ''} "
-            f"hold{'s' if unique_female_in_power == 1 else ''} {female_power_count} roles, "
-            f"meaning individual directors chair multiple committees. "
+    ai_board_summary = ai.get("so_what_board", "")
+    if not ai_board_summary:
+        # Fallback to rule-based if AI narrative missing
+        ai_board_summary = (
+            f"{female_c} of {board_size} directors are female ({female_pct:.0f}%), "
+            f"{pct_comparison}. "
+            f"Women hold {female_power_count} of 5 key governance roles "
+            f"(vs. a universe average of {avg_power:.1f})."
         )
 
     st.markdown(
         f'<div style="background:#f8f9fa; border-left:4px solid #3B4B8A; padding:10px 16px; '
         f'margin:8px 0; font-size:0.92em;">'
-        f'<strong>Summary (AI driven):</strong> <em>{board_summary}</em></div>',
+        f'<strong>Summary (AI driven):</strong> <em>{ai_board_summary}</em></div>',
         unsafe_allow_html=True,
     )
 
@@ -619,13 +617,22 @@ def render_company_page() -> None:
             f"{int(fc25)} ({pct25:.0f}%) in 2025"
         )
 
-    depth_summary = _generate_depth_summary(row, board_row)
+    ai_depth_summary = ai.get("so_what_depth", "")
+    if not ai_depth_summary:
+        ai_depth_summary = _generate_depth_summary(row, board_row)
+
     st.markdown(
         f'<div style="background:#f8f9fa; border-left:4px solid #3B4B8A; padding:10px 16px; '
         f'margin:8px 0; font-size:0.92em;">'
-        f'<strong>Summary (AI driven):</strong> <em>{depth_summary}</em></div>',
+        f'<strong>Summary (AI driven):</strong> <em>{ai_depth_summary}</em></div>',
         unsafe_allow_html=True,
     )
+
+    # --- Sector Peer Governance Comparison ---
+    sector_val = row.get("sector", "")
+    if sector_val:
+        fig_peers = build_sector_peer_governance(scored, ticker, sector_val)
+        st.plotly_chart(fig_peers, use_container_width=True, config=PLOTLY_CONFIG)
 
     # ===================================================================
     # SECTION 3: Corporate Financial Performance (merged Financial + Trading Signal)
@@ -655,11 +662,14 @@ def render_company_page() -> None:
         st.plotly_chart(fig, use_container_width=True, config=PLOTLY_CONFIG)
 
     tsr_3yr = row.get("tsr_3yr")
-    fin_summary = _generate_financial_summary(ticker, fin_table, tsr_3yr)
+    ai_fin_summary = ai.get("so_what_financial", "")
+    if not ai_fin_summary:
+        ai_fin_summary = _generate_financial_summary(ticker, fin_table, tsr_3yr)
+
     st.markdown(
         f'<div style="background:#f8f9fa; border-left:4px solid #3B4B8A; padding:10px 16px; '
         f'margin:8px 0; font-size:0.92em;">'
-        f'<strong>Summary (AI driven):</strong> <em>{fin_summary}</em></div>',
+        f'<strong>Summary (AI driven):</strong> <em>{ai_fin_summary}</em></div>',
         unsafe_allow_html=True,
     )
 
@@ -734,10 +744,14 @@ def render_company_page() -> None:
         )
 
     if fgag is not None and pd.notna(fgag):
-        trading_summary = _generate_trading_summary(row)
+        ai_trading_summary = ai.get("so_what_trading", "")
+        if not ai_trading_summary:
+            ai_trading_summary = _generate_trading_summary(row)
+
         st.markdown(
             f'<div style="background:#f8f9fa; border-left:4px solid #3B4B8A; padding:10px 16px; '
             f'margin:8px 0; font-size:0.92em;">'
-            f'<strong>Summary (AI driven):</strong> <em>{trading_summary}</em></div>',
+            f'<strong>Summary (AI driven):</strong> <em>{ai_trading_summary}</em></div>',
             unsafe_allow_html=True,
         )
+

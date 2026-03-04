@@ -349,9 +349,47 @@ components.html(
             }
 
             // 3. Clone the tab list (AFTER menu, so tabs appear at bottom)
+            //    The clone lives outside .stTabs so the CSS rules from the
+            //    main stylesheet don't apply.  We re-apply them inline.
             var tabClone = tabList.cloneNode(true);
-            tabClone.style.setProperty('background', 'white', 'important');
+            tabClone.style.cssText =
+                'background-color:#F0F2F6 !important;' +
+                'gap:0px;border-radius:0;padding:0 16px;' +
+                'display:flex;align-items:center;';
             header.appendChild(tabClone);
+
+            // Style each cloned tab + sync active state
+            var OXFORD = '#002147';
+            var INDIGO = '#3B4B8A';
+
+            function styleCloneTabs() {
+                var origT = tabList.querySelectorAll('[data-baseweb="tab"]');
+                var cloneT = tabClone.querySelectorAll('[data-baseweb="tab"]');
+                cloneT.forEach(function(ct, i) {
+                    var isActive = origT[i] &&
+                        origT[i].getAttribute('aria-selected') === 'true';
+                    ct.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                    var fw = isActive ? '700' : '600';
+                    var col = isActive ? INDIGO : OXFORD;
+                    var bg = isActive ? 'white' : 'transparent';
+                    var bb = isActive ? '3px solid ' + INDIGO : '3px solid transparent';
+                    ct.style.cssText =
+                        'padding:10px 24px;border-radius:0;cursor:pointer;' +
+                        'border:none;font-size:inherit;font-family:inherit;' +
+                        'font-weight:' + fw + ' !important;' +
+                        'color:' + col + ' !important;' +
+                        'background-color:' + bg + ';' +
+                        'border-bottom:' + bb + ';';
+                    // Force font-weight on ALL children (Streamlit nests
+                    // <p>, <span>, <div> inside tabs with their own styles)
+                    var kids = ct.querySelectorAll('*');
+                    kids.forEach(function(k) {
+                        k.style.setProperty('font-weight', fw, 'important');
+                        k.style.setProperty('color', col, 'important');
+                    });
+                });
+            }
+            styleCloneTabs();
 
             // Wire tab clone clicks → original tabs
             var origTabs = tabList.querySelectorAll('[data-baseweb="tab"]');
@@ -405,16 +443,7 @@ components.html(
 
             // --- Sync active tab styling on clone when tabs switch ---
             var observer = new MutationObserver(function() {
-                var freshOrigTabs = tabList.querySelectorAll('[data-baseweb="tab"]');
-                var freshCloneTabs = tabClone.querySelectorAll('[data-baseweb="tab"]');
-                freshOrigTabs.forEach(function(ot, i) {
-                    if (freshCloneTabs[i]) {
-                        freshCloneTabs[i].setAttribute(
-                            'aria-selected',
-                            ot.getAttribute('aria-selected') || 'false'
-                        );
-                    }
-                });
+                styleCloneTabs();
             });
             observer.observe(tabList, {
                 attributes: true, subtree: true, attributeFilter: ['aria-selected']
