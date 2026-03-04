@@ -232,8 +232,23 @@ with menu_cols[3]:
 tab_screener, tab_company = st.tabs(["Screener", "Company Deep Dive"])
 
 # ---------------------------------------------------------------------------
-# Sticky header — JS injection via components.html (same-origin iframe)
-# Dynamically walks the DOM to find & fix the actual ancestor chain.
+# Frozen header — JS injection via components.html
+#
+# HOW STREAMLIT'S OWN HEADER WORKS (verified from source):
+#   stApp         (position:absolute, overflow:hidden, fills viewport)
+#   ├── header    (position:absolute, top:0)  ← OUTSIDE scroll container
+#   └── section   (overflow:auto, height:100dvh) ← scroll container
+#       └── content
+#
+# The header is a SIBLING of the scroll container, not inside it.
+# That's why it never scrolls.  Our banner is INSIDE the scroll container,
+# buried in nested wrappers.  No amount of overflow fixes can make
+# position:sticky work reliably through that wrapper chain.
+#
+# Solution: use JS to CLONE our header elements, place the clones outside
+# the scroll container (as siblings, like Streamlit does), hide the
+# originals, and push the content down with padding.  Click handlers on
+# tabs are re-wired by delegating clicks from clones to originals.
 # ---------------------------------------------------------------------------
 import streamlit.components.v1 as components
 components.html(
@@ -242,77 +257,177 @@ components.html(
     (function() {
         var doc = window.parent.document;
 
-        // 1. Inject persistent CSS into parent <head> for overflow fixes.
-        //    This survives Streamlit re-renders (unlike inline styles).
-        if (!doc.getElementById('athena-sticky-css')) {
-            var style = doc.createElement('style');
-            style.id = 'athena-sticky-css';
-            style.textContent =
-                'section[data-testid="stMain"] > div,' +
-                '[data-testid="stMainBlockContainer"],' +
-                '[data-testid="stMainBlockContainer"] > div,' +
-                '[data-testid="stVerticalBlockBorderWrapper"],' +
-                '[data-testid="stVerticalBlockBorderWrapper"] > div,' +
-                '[data-testid="stVerticalBlock"],' +
-                '[data-testid="stElementContainer"],' +
-                '[data-testid="stTabs"],' +
-                '[data-testid="stTabs"] > div' +
-                '{ overflow: visible !important; }';
-            doc.head.appendChild(style);
-        }
+        function freezeHeader() {
+            // Bail if already applied
+            if (doc.getElementById('athena-frozen-header')) return true;
 
-        // 2. Find elements and apply sticky positioning
-        function applySticky() {
             var banner = doc.querySelector('.athena-banner');
             var tabList = doc.querySelector('[data-baseweb="tab-list"]');
             if (!banner || !tabList) return false;
 
-            // Find banner's Streamlit block wrapper using closest()
-            var bannerBlock = banner.closest(
+            // Find the scroll container — it's the <section> ancestor with
+            // overflow:auto (Streamlit calls it StyledAppViewMain).
+            var scrollContainer = banner.closest('section[data-testid]');
+            if (!scrollContainer) {
+                // Fallback: walk up until we find overflow:auto
+                var node = banner.parentElement;
+                while (node && node !== doc.body) {
+                    var ov = window.parent.getComputedStyle(node).overflowY;
+                    if (ov === 'auto' || ov === 'scroll') {
+                        scrollContainer = node;
+                        break;
+                    }
+                    node = node.parentElement;
+                }
+            }
+            if (!scrollContainer) return false;
+
+            // Find the menu bar by walking direct children of the
+            // stVerticalBlock.  st.markdown, st.columns, st.tabs etc.
+            // each create different wrapper types, so we can't rely on
+            // stElementContainer — instead we walk the parent block.
+            var verticalBlock = banner.closest(
+                '[data-testid="stVerticalBlock"]'
+            );
+            if (!verticalBlock) return false;
+
+            // Find which direct child of verticalBlock contains the banner
+            var bannerChild = banner;
+            while (bannerChild && bannerChild.parentElement !== verticalBlock) {
+                bannerChild = bannerChild.parentElement;
+            }
+
+            // The menu bar is built with st.columns, which creates a
+            // stHorizontalBlock.  Look for that specifically — not 'button',
+            // because Streamlit tabs are also <button> elements.
+            var menuBar = null;
+            if (bannerChild) {
+                var sib = bannerChild.nextElementSibling;
+                while (sib) {
+                    if (sib.querySelector('[data-testid="stHorizontalBlock"]') ||
+                        sib.getAttribute('data-testid') === 'stHorizontalBlock') {
+                        menuBar = sib;
+                        break;
+                    }
+                    sib = sib.nextElementSibling;
+                }
+            }
+
+            // Also grab the top-level wrapper for collapsing later
+            var bannerWrapper = banner.closest(
                 '[data-testid="stVerticalBlockBorderWrapper"]'
             );
-            if (!bannerBlock) return false;
 
-            // Menu wrapper = next sibling block after the banner block
-            var menuBlock = bannerBlock.nextElementSibling;
-            // Verify it's the menu (has buttons), not the tabs container
-            if (menuBlock && !menuBlock.querySelector('[data-testid="stHorizontalBlock"]')
-                         && !menuBlock.querySelector('.stButton')) {
-                menuBlock = null;
+            // --- Build the frozen header container ---
+            // Order: banner (top) → menu bar (middle) → tabs (bottom)
+            var header = doc.createElement('div');
+            header.id = 'athena-frozen-header';
+            header.style.cssText =
+                'position:absolute;top:0;left:0;right:0;z-index:999;' +
+                'pointer-events:auto;';
+
+            // 1. Clone the banner
+            var bannerClone = banner.cloneNode(true);
+            header.appendChild(bannerClone);
+
+            // 2. Clone the menu bar
+            if (menuBar) {
+                var menuClone = menuBar.cloneNode(true);
+                menuClone.style.background = 'white';
+                header.appendChild(menuClone);
+
+                // Wire menu clone clicks → originals
+                var origBtns = menuBar.querySelectorAll('button');
+                var cloneBtns = menuClone.querySelectorAll('button');
+                cloneBtns.forEach(function(btn, i) {
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        if (origBtns[i]) origBtns[i].click();
+                    });
+                });
             }
 
-            // Apply sticky: banner block
-            var cumTop = 0;
-            bannerBlock.style.setProperty('position', 'sticky', 'important');
-            bannerBlock.style.setProperty('top', '0px', 'important');
-            bannerBlock.style.setProperty('z-index', '999', 'important');
-            bannerBlock.style.setProperty('background', 'white', 'important');
-            cumTop = bannerBlock.getBoundingClientRect().height;
+            // 3. Clone the tab list (AFTER menu, so tabs appear at bottom)
+            var tabClone = tabList.cloneNode(true);
+            tabClone.style.setProperty('background', 'white', 'important');
+            header.appendChild(tabClone);
 
-            // Apply sticky: menu block
-            if (menuBlock) {
-                menuBlock.style.setProperty('position', 'sticky', 'important');
-                menuBlock.style.setProperty('top', cumTop + 'px', 'important');
-                menuBlock.style.setProperty('z-index', '998', 'important');
-                menuBlock.style.setProperty('background', 'white', 'important');
-                cumTop += menuBlock.getBoundingClientRect().height;
+            // Wire tab clone clicks → original tabs
+            var origTabs = tabList.querySelectorAll('[data-baseweb="tab"]');
+            var cloneTabs = tabClone.querySelectorAll('[data-baseweb="tab"]');
+            cloneTabs.forEach(function(tab, i) {
+                tab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (origTabs[i]) origTabs[i].click();
+                });
+            });
+
+            // --- Insert the frozen header BEFORE the scroll container ---
+            // (as a sibling, exactly like Streamlit's own header)
+            scrollContainer.parentElement.insertBefore(header, scrollContainer);
+
+            // --- Measure header height and push content down ---
+            var headerHeight = header.getBoundingClientRect().height;
+
+            // Add top padding to the scroll container so content starts
+            // below the frozen header
+            var existingPadding = parseInt(
+                window.parent.getComputedStyle(scrollContainer).paddingTop, 10
+            ) || 0;
+            scrollContainer.style.setProperty(
+                'padding-top', headerHeight + 'px', 'important'
+            );
+
+            // --- Hide the originals inside the scroll container ---
+            // (they still exist in the DOM for React, just invisible)
+            banner.style.setProperty('visibility', 'hidden', 'important');
+            banner.style.setProperty('height', '0', 'important');
+            banner.style.setProperty('overflow', 'hidden', 'important');
+            banner.style.setProperty('padding', '0', 'important');
+            banner.style.setProperty('border', 'none', 'important');
+            if (bannerWrapper) {
+                bannerWrapper.style.setProperty('height', '0', 'important');
+                bannerWrapper.style.setProperty('overflow', 'hidden', 'important');
+                bannerWrapper.style.setProperty('min-height', '0', 'important');
             }
+            if (menuBar) {
+                menuBar.style.setProperty('visibility', 'hidden', 'important');
+                menuBar.style.setProperty('height', '0', 'important');
+                menuBar.style.setProperty('overflow', 'hidden', 'important');
+                menuBar.style.setProperty('min-height', '0', 'important');
+            }
+            tabList.style.setProperty('visibility', 'hidden', 'important');
+            tabList.style.setProperty('height', '0', 'important');
+            tabList.style.setProperty('overflow', 'hidden', 'important');
+            tabList.style.setProperty('padding', '0', 'important');
 
-            // Apply sticky: tab header bar ITSELF (not the tabs container)
-            tabList.style.setProperty('position', 'sticky', 'important');
-            tabList.style.setProperty('top', cumTop + 'px', 'important');
-            tabList.style.setProperty('z-index', '997', 'important');
+            // --- Sync active tab styling on clone when tabs switch ---
+            var observer = new MutationObserver(function() {
+                var freshOrigTabs = tabList.querySelectorAll('[data-baseweb="tab"]');
+                var freshCloneTabs = tabClone.querySelectorAll('[data-baseweb="tab"]');
+                freshOrigTabs.forEach(function(ot, i) {
+                    if (freshCloneTabs[i]) {
+                        freshCloneTabs[i].setAttribute(
+                            'aria-selected',
+                            ot.getAttribute('aria-selected') || 'false'
+                        );
+                    }
+                });
+            });
+            observer.observe(tabList, {
+                attributes: true, subtree: true, attributeFilter: ['aria-selected']
+            });
 
             return true;
         }
 
-        // 3. Retry until DOM is ready, then re-apply periodically for re-renders
+        // Retry until DOM is ready
         var attempts = 0;
         var timer = setInterval(function() {
-            if (applySticky() || ++attempts > 20) {
+            if (freezeHeader() || ++attempts > 30) {
                 clearInterval(timer);
-                // Re-apply every 3s to handle Streamlit re-renders
-                setInterval(applySticky, 3000);
             }
         }, 300);
     })();
